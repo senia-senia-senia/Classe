@@ -18,3 +18,39 @@ print('''выбирай:
         1 - Повседневный стиль
         2 - Спортивный стиль''')    
 Your_wear = input()
+Your_wear = int(Your_wear)
+if Your_wear == 1:
+    Your_wear = CasualWear()
+else:
+    Your_wear = SportWear()
+print('Сегодня ты наденешь',Your_wear.shoeses, Your_wear.In_feet, Your_wear.In_body )
+print('''Хочешь поменять свою одежду в ручную?
+    1 - Да
+    2 - Нет''')
+Your_choice = int(input())
+while Your_choice == 1:
+    print('''Хочешь ли ты поменять:
+        1 - обувь
+        2 - одежду на ноги
+        3 - одежду на тело''')
+    Change = input()
+    Change = int(Change)
+    if Change == 1:
+        print('меняешь', Your_wear.shoeses, 'на:')
+        Your_wear.new_shoeses = input()
+        Your_wear.shoeses = Your_wear.new_shoeses
+    elif Change == 2:
+        print('меняешь', Your_wear.In_feet, 'на:')
+        Your_wear.new_In_feet = input()
+        Your_wear.In_feet = Your_wear.new_In_feet
+    elif Change == 3:
+        print('меняешь', Your_wear.In_body, 'на:')
+        Your_wear.new_In_body = input()
+        Your_wear.In_body = Your_wear.new_In_body
+    print('''Хочещь еще что-нибудь поменять?
+        1 - Да
+        2 - Нет''')
+    Your_choice = int(input())
+
+print('Да ты неплохо одет!',Your_wear.shoeses, Your_wear.In_feet, Your_wear.In_body )
+
