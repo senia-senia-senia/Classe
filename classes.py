@@ -14,15 +14,29 @@ class SportWear(DefaultWear):
     shoeses = 'Кроссовки'
     In_feet = 'Шорты'
     In_body = 'Майка'
+class OtherWear(DefaultWear):
+    pass
+
 print('''выбирай:
         1 - Повседневный стиль
-        2 - Спортивный стиль''')    
+        2 - Спортивный стиль
+        3 - Другое''')    
 Your_wear = input()
 Your_wear = int(Your_wear)
 if Your_wear == 1:
     Your_wear = CasualWear()
-else:
+elif Your_wear == 2:
     Your_wear = SportWear()
+elif Your_wear == 3:
+    print('''Это специальный раздел, здесь ты сможешь выбрать себе нужную
+    одежду''')
+    Your_wear = OtherWear()
+    print('Напиши, какую обувь ты хочешь надеть:')
+    Your_wear.shoeses = input()
+    print('Напиши, что ты хочешь одеть на ноги:')
+    Your_wear.In_feet = input()
+    print('А теперь напиши, что хочешь одеть на тело:')
+    Your_wear.In_body = input()
 print('Сегодня ты наденешь',Your_wear.shoeses, Your_wear.In_feet, Your_wear.In_body )
 print('''Хочешь поменять свою одежду в ручную?
     1 - Да
